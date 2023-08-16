@@ -37,7 +37,68 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     },
   });
 
-  return res.json({ times: searchTimes, bookings });
+  const bookingTablesObj: { [key: string]: { [key: number]: true } } = {};
+
+  bookings.forEach((booking) => {
+    bookingTablesObj[booking.booking_time.toISOString()] =
+      booking.tables.reduce((obj, table) => {
+        return {
+          ...obj,
+          [table.table_id]: true,
+        };
+      }, {});
+  });
+
+  const restaurant = await prisma.restaurant.findUnique({
+    where: {
+      slug,
+    },
+    select: {
+      Tables: true,
+    },
+  });
+
+  if (!restaurant)
+    return res.status(400).json({ errorMessage: "Invalid booking request" });
+
+  const tables = restaurant.Tables;
+
+  const searchTimesWithTables = searchTimes.map((searchTime) => {
+    return {
+      date: new Date(`${day}T${searchTime}`),
+      time: searchTime,
+      tables,
+    };
+  });
+
+  searchTimesWithTables.forEach((t) => {
+    t.tables = t.tables.filter((table) => {
+      if (bookingTablesObj[t.date.toISOString()]) {
+        if (bookingTablesObj[t.date.toISOString()][table.id]) return false;
+      }
+      return true;
+    });
+  });
+
+  const availabilities = searchTimesWithTables.map((t) => {
+    const sumSeats = t.tables.reduce((sum, table) => {
+      return sum + table.seats;
+    }, 0);
+
+    return {
+      time: t.time,
+      available: sumSeats >= parseInt(partySize),
+    };
+  });
+
+  return res.json({
+    times: searchTimes,
+    bookings,
+    bookingTablesObj,
+    tables,
+    searchTimesWithTables,
+    availabilities,
+  });
 };
 
 export default handler;
