@@ -20,9 +20,7 @@ export default function RootLayout({
           <AuthContext>
             <>
               <Navbar />
-              <main className="max-w-screen-xl m-auto bg-white">
-                {children}
-              </main>
+              <main className="max-w-screen bg-white">{children}</main>
             </>
           </AuthContext>
         </main>

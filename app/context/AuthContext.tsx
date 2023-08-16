@@ -32,7 +32,7 @@ export const AuthenticationContext = createContext<AuthState>({
 
 const AuthContext = ({ children }: { children: React.ReactNode }) => {
   const [authState, setAuthState] = useState<State>({
-    loading: true,
+    loading: false,
     data: null,
     error: null,
   });
@@ -54,7 +54,7 @@ const AuthContext = ({ children }: { children: React.ReactNode }) => {
         });
       }
 
-      const response = await axios.get("http://localhost:3001/api/auth/me", {
+      const response = await axios.get("http://localhost:3000/api/auth/me", {
         headers: {
           Authorization: `Bearer ${jwt}`,
         },
