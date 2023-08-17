@@ -4,7 +4,9 @@ import axios from "axios";
 const useAvailability = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [data, setData] = useState(null);
+  const [data, setData] = useState<
+    { time: string; available: boolean }[] | null
+  >(null);
 
   const fetchAvailabilities = async ({
     slug,
@@ -17,6 +19,13 @@ const useAvailability = () => {
     day: string;
     time: string;
   }) => {
+    console.log({
+      slug,
+      day,
+      time,
+      partySize,
+    });
+
     setLoading(true);
 
     try {

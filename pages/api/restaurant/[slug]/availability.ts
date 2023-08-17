@@ -104,14 +104,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       return timeIsAfterOpeningHours && timeIsBeforeClosingHours;
     });
 
-  return res.json({
-    times: searchTimes,
-    bookings,
-    bookingTablesObj,
-    tables,
-    searchTimesWithTables,
-    availabilities,
-  });
+  return res.json(availabilities);
 };
 
 export default handler;
