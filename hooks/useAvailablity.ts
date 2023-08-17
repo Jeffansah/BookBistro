@@ -19,13 +19,6 @@ const useAvailability = () => {
     day: string;
     time: string;
   }) => {
-    console.log({
-      slug,
-      day,
-      time,
-      partySize,
-    });
-
     setLoading(true);
 
     try {

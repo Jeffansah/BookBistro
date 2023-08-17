@@ -6,7 +6,10 @@ import { useState } from "react";
 import useAvailability from "../../../../hooks/useAvailablity";
 import { CircularProgress } from "@mui/material";
 import Link from "next/link";
-import { convertToDisplayTime } from "../../../../utils/convertToDisplayTime";
+import {
+  convertToDisplayTime,
+  Time,
+} from "../../../../utils/convertToDisplayTime";
 
 const ReservationCard = ({
   openTime,
@@ -128,12 +131,12 @@ const ReservationCard = ({
                   className="bg-red-600 cursor-pointer p-2 w-24 text-center mb-3 text-white rounded mr-3"
                 >
                   <p className="text-sm font-bold">
-                    {convertToDisplayTime(time.time)}
+                    {convertToDisplayTime(time.time as Time)}
                   </p>
                 </Link>
               ) : (
                 <p className="bg-gray-300 p-2 text-center text-sm font-light w-24 rounded mr-3 mb-3 text-black cursor-default">
-                  {convertToDisplayTime(time.time)}
+                  {convertToDisplayTime(time.time as Time)}
                 </p>
               );
             })}

@@ -70,6 +70,7 @@ const AuthModalInputs = ({ inputs, handleChangeInput, isSignIn }: Props) => {
           className="border rounded p-2 py-3 w-full focus:outline-blue-300"
           onChange={handleChangeInput}
           name="password"
+          placeholder="password"
         />
       </div>
     </div>

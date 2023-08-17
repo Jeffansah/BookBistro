@@ -169,8 +169,6 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       data: bookingsOnTablesData,
     });
 
-    if (!booking) return res.status(400).json("Booking Invalid!");
-
     return res.json(booking);
   }
 };
