@@ -132,7 +132,9 @@ const ReservationCard = ({
                   </p>
                 </Link>
               ) : (
-                <p className="bg-gray-300 p-2 w-24 rounded mr-3"></p>
+                <p className="bg-gray-300 p-2 text-center text-sm font-light w-24 rounded mr-3 mb-3 text-black cursor-default">
+                  {convertToDisplayTime(time.time)}
+                </p>
               );
             })}
           </div>
