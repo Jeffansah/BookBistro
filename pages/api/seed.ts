@@ -1313,7 +1313,7 @@ export default async function handler(
       },
       {
         restaurant_id: vivaanId,
-        seats: 4,
+        seats: 2,
       },
       {
         restaurant_id: vivaanId,

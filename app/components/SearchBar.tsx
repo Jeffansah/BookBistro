@@ -12,7 +12,7 @@ const SearchBar = () => {
       <input
         className="rounded  mr-3 p-2 w-[450px]"
         type="text"
-        placeholder="State, city or town"
+        placeholder="Search between Niagara, Ottawa, Toronto"
         value={location}
         onChange={(e) => setLocation(e.target.value)}
       />
