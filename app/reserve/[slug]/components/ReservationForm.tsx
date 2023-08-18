@@ -72,13 +72,13 @@ const ReservationForm = ({
       {didBook ? (
         <>
           <Image
-            className="mt-3"
+            className="mt-3 pr-10 sm:pr-0"
             src="https://i.ibb.co/F865Bvk/High-five.jpg"
             width={400}
             height={400}
             alt="success"
           />
-          <div className="flex flex-col mt-2 ">
+          <div className="flex flex-col mt-2 w-[332px] sm:w-full">
             <p className="text-2xl">
               You've successfully completed your booking!
             </p>
@@ -92,14 +92,14 @@ const ReservationForm = ({
           </div>
         </>
       ) : (
-        <>
+        <div className="flex flex-wrap max-w-[400px] sm:max-w-[1700px] gap-3">
           {" "}
           <input
             name="bookerFirstName"
             onChange={handleChangeInput}
             value={inputs.bookerFirstName}
             type="text"
-            className="border rounded p-3 w-80 mb-4 focus:outline-blue-300"
+            className="border  rounded p-3  w-40 sm:w-80 mb-4 focus:outline-blue-300"
             placeholder="First name"
           />
           <input
@@ -107,7 +107,7 @@ const ReservationForm = ({
             onChange={handleChangeInput}
             value={inputs.bookerLastName}
             type="text"
-            className="border rounded p-3 w-80 mb-4 focus:outline-blue-300"
+            className="border rounded p-3  w-40 sm:w-80 mb-4 focus:outline-blue-300"
             placeholder="Last name"
           />
           <input
@@ -115,7 +115,7 @@ const ReservationForm = ({
             onChange={handleChangeInput}
             value={inputs.bookerPhone}
             type="text"
-            className="border rounded p-3 w-80 mb-4 focus:outline-blue-300"
+            className="border rounded p-3  w-40 sm:w-80 mb-4 focus:outline-blue-300"
             placeholder="Phone number"
           />
           <input
@@ -123,7 +123,7 @@ const ReservationForm = ({
             onChange={handleChangeInput}
             value={inputs.bookerEmail}
             type="text"
-            className="border rounded p-3 w-80 mb-4 focus:outline-blue-300"
+            className="border rounded p-3  w-40 sm:w-80 mb-4 focus:outline-blue-300"
             placeholder="Email"
           />
           <input
@@ -131,7 +131,7 @@ const ReservationForm = ({
             onChange={handleChangeInput}
             value={inputs.bookerOccasion}
             type="text"
-            className="border rounded p-3 w-80 mb-4 focus:outline-blue-300"
+            className="border rounded p-3  w-40 sm:w-80 mb-4 focus:outline-blue-300"
             placeholder="Occasion (optional)"
           />
           <input
@@ -139,26 +139,28 @@ const ReservationForm = ({
             onChange={handleChangeInput}
             value={inputs.bookerRequest}
             type="text"
-            className="border rounded p-3 w-80 mb-4 focus:outline-blue-300"
+            className="border rounded p-3  w-40 sm:w-80 mb-4 focus:outline-blue-300"
             placeholder="Requests (optional)"
           />
-          <button
-            disabled={disabled || loading}
-            className="bg-red-600 w-full p-3 text-white font-bold rounded disabled:bg-gray-300"
-            onClick={handleClick}
-          >
-            {loading ? (
-              <CircularProgress color="inherit" />
-            ) : (
-              "Complete reservation"
-            )}
-          </button>
-          <p className="mt-4 text-sm">
-            By clicking “Complete reservation” you agree to the BookBistro Terms
-            of Use and Privacy Policy. Standard text message rates may apply.
-            You may opt out of receiving text messages at any time.
-          </p>
-        </>
+          <div className="max-w-[400px] sm:max-w-[1700px]">
+            <button
+              disabled={disabled || loading}
+              className="bg-red-600 p-3 text-white font-bold rounded disabled:bg-gray-300 w-[332px] sm:w-full"
+              onClick={handleClick}
+            >
+              {loading ? (
+                <CircularProgress color="inherit" />
+              ) : (
+                "Complete reservation"
+              )}
+            </button>
+            <p className="mt-4 text-sm w-[332px] sm:w-full">
+              By clicking “Complete reservation” you agree to the BookBistro
+              Terms of Use and Privacy Policy. Standard text message rates may
+              apply. You may opt out of receiving text messages at any time.
+            </p>
+          </div>
+        </div>
       )}
     </div>
   );

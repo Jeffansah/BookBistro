@@ -33,8 +33,8 @@ const ReservationPage = async ({
 
   return (
     <>
-      <div className="border-t h-screen flex justify-center items-center">
-        <div className="flex flex-col justify-center items-center py-9 w-3/5 m-auto">
+      <div className="border-t h-screen flex justify-center items-center pb-[200px] sm:pb-[300px] lg:pb-0 ">
+        <div className="flex flex-col justify-center items-center py-9 w-3/5 sm:m-auto ml-[300px]">
           <div>
             <Header
               image={restaurant.main_Image}

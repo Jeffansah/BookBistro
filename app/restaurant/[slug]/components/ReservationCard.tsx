@@ -67,9 +67,9 @@ const ReservationCard = ({
   };
 
   return (
-    <div className="hidden lg:block lg:fixed w-[15%] bg-white rounded p-3 shadow">
-      <div className="text-center border-b pb-2 font-bold">
-        <h4 className="mr-7 text-lg">Make a Reservation</h4>
+    <div className="hidden lg:block lg:fixed w-[15%] bg-white rounded p-3 shadow py-8">
+      <div className="text-center border-b pb-2 font-bold mb-5">
+        <h4 className="mr-7 text-lg mb-2">Make a Reservation</h4>
       </div>
       <div className="my-3 flex flex-col">
         <label htmlFor="">Party size</label>
