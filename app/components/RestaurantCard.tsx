@@ -9,7 +9,7 @@ interface Props {
 
 const RestaurantCard = ({ restaurant }: Props) => {
   return (
-    <div className="w-52 lg:w-64 lg:h-72 m-3 rounded overflow-hidden border cursor-pointer hover:shadow-lg group">
+    <div className="w-[11rem] h-64 lg:w-64 lg:h-72 m-3 rounded overflow-hidden border cursor-pointer hover:shadow-lg group">
       <Link href={`/restaurant/${restaurant.slug}`}>
         <div className="relative">
           <img
