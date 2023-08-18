@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar";
 import AuthContext from "./context/AuthContext";
 import "./globals.css";
 import "react-datepicker/dist/react-datepicker.css";
+import Footer from "./components/Footer";
 
 export default function RootLayout({
   children,
@@ -15,7 +16,7 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body>
+      <body className="bg-white">
         <main className="bg-white min-h-screen w-screen">
           <AuthContext>
             <>
@@ -24,6 +25,7 @@ export default function RootLayout({
             </>
           </AuthContext>
         </main>
+        <Footer />
       </body>
     </html>
   );

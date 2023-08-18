@@ -2,7 +2,7 @@ import Header from "./components/Header";
 
 const loading = () => {
   return (
-    <main className="h-screen">
+    <main className="">
       <Header />
       {/* <div className="h-[80vh] flex justify-center items-center">
         <Spin size="large" />
