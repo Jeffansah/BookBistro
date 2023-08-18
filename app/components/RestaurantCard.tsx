@@ -9,7 +9,7 @@ interface Props {
 
 const RestaurantCard = ({ restaurant }: Props) => {
   return (
-    <div className="w-64 h-72 m-3 rounded overflow-hidden border cursor-pointer hover:shadow-lg group">
+    <div className="w-52 lg:w-64 lg:h-72 m-3 rounded overflow-hidden border cursor-pointer hover:shadow-lg group">
       <Link href={`/restaurant/${restaurant.slug}`}>
         <div className="relative">
           <img
@@ -18,10 +18,12 @@ const RestaurantCard = ({ restaurant }: Props) => {
             className="w-full h-36 transition-transform transform-gpu group-hover:scale-105 ease-in-out duration-200"
           />
           <div className="p-2">
-            <h3 className="font-bold text-2xl mb-2">{restaurant.name}</h3>
-            <div className="flex items-start">
+            <h3 className="font-bold text-lg lg:text-2xl lg:mb-2">
+              {restaurant.name}
+            </h3>
+            <div className="flex items-center">
               <Stars reviews={restaurant.reviews} />
-              <p className="ml-2">
+              <p className="ml-2 ">
                 {restaurant.reviews.length} review
                 {restaurant.reviews.length !== 1 && "s"}
               </p>

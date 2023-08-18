@@ -25,7 +25,7 @@ const Stars = ({ reviews, rating }: { reviews: Review[]; rating?: number }) => {
     }
 
     return stars.map((star) => {
-      return <Image src={star} alt="" className="w-4 h-4 mr-1" />;
+      return <Image src={star} alt="" className="w-3 h-3 lg:w-4 lg:h-4 mr-1" />;
     });
   };
 

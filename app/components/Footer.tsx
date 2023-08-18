@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
-    <div className="mt-40  bg-[#2d333f] ">
-      <div className="max-w-[1700px] grid grid-cols-1 md:grid-cols-4 gap-y-10 px-32 py-14 m-auto">
+    <div className="lg:mt-40 mt-28  bg-[#2d333f] pb-4">
+      <div className="lg:max-w-[1700px] grid grid-cols-1 md:grid-cols-4 gap-y-10 pl-6 lg:px-32 py-14 lg:m-auto">
         <div className="space-y-4 text-md text-gray-400">
           <h5 className="font-bold text-white text-lg">ABOUT</h5>
           <p className="cursor-pointer hover:text-white">
@@ -41,8 +41,10 @@ const Footer = () => {
           <p className="cursor-pointer hover:text-white">Report an Issue</p>
         </div>
       </div>
-      <div className=" max-w-[1700px] m-auto text-center text-gray-400 mt-12 mb-4">
-        <p>Copyright © 2023 BookBistro - All rights reserved.</p>
+      <div className=" max-w-[1700px] m-auto text-center text-gray-400 mt-12">
+        <p className="px-10 lg:px-0">
+          Copyright © 2023 BookBistro - All rights reserved.
+        </p>
       </div>
     </div>
   );

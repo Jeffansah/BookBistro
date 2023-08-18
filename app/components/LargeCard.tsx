@@ -12,9 +12,9 @@ const LargeCard = ({
   buttonText: string;
 }) => {
   return (
-    <div className="flex items-center rounded-2xl h-96 min-w-[300px] mt-44 mb-6 bg-[url(https://i.ibb.co/jTJ5hVN/two-pieces-medium-cooked-steak-served-with-tomato-mushroom-zucchini.jpg)] bg-cover bg-center bg-no-repeat">
+    <div className="flex lg:items-center lg:rounded-2xl h-96 min-w-[300px] mt-32 lg:mt-44 mb-6 lg:bg-[url(https://i.ibb.co/jTJ5hVN/two-pieces-medium-cooked-steak-served-with-tomato-mushroom-zucchini.jpg)] bg-[url(https://i.ibb.co/M2dXzpL/Untitled-1.webp)] bg-cover bg-center bg-no-repeat">
       <div className="cursor-pointer w-[58vw] ml-10">
-        <h3 className="text-[36px] mb-3 w-64 font-semibold text-white">
+        <h3 className="text-[36px] mt-10 mb-3 w-64 font-semibold text-white">
           {title}
         </h3>
         <p className="text-lg text-gray-200">{description}</p>
