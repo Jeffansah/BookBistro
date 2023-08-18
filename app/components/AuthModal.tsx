@@ -87,7 +87,7 @@ const AuthModal = ({ isSignin }: { isSignin: boolean }) => {
       <button
         onClick={handleOpen}
         className={`${
-          isSignin && " sm:bg-blue-400 sm:text-white"
+          isSignin && " lg:bg-blue-400 lg:text-white"
         } border p-2 px-5 rounded mr-3 bg-transparent border-none sm:border`}
       >
         {isSignin ? "Sign in" : "Sign up"}

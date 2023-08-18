@@ -28,7 +28,7 @@ const Navbar = () => {
       >
         BOOKBISTRO
       </Link>
-      <div className="flex items-center lg:mr-6 mr-2">
+      <div className="flex items-center md:mr-6 mr-2">
         <button
           onClick={toggleMenu}
           className={`text-gray-700 focus:outline-none lg:hidden ${
@@ -71,26 +71,43 @@ const Navbar = () => {
             />
           </svg>
         </button>
-        {showMenu && (
-          <div className="lg:flex absolute top-0 right-0 mt-10 bg-white p-3 rounded shadow-lg sm:h-[130px]">
-            <div className="flex flex-col">
-              {data ? (
+
+        <div
+          className={`${
+            showMenu &&
+            "absolute top-0 right-0 mt-10 bg-white p-3 rounded shadow-lg sm:h-[130px]"
+          }`}
+        >
+          <div className="flex flex-col lg:flex-row">
+            {loading ? null : data ? (
+              <>
                 <button
                   onClick={signout}
-                  className=" bg-blue-400 text-white border p-2 px-5 rounded mr-3 mt-2 sm:mt-0"
+                  className="hidden lg:block bg-blue-400 text-white border p-2 px-5 rounded mr-3 mt-2 sm:mt-0"
                 >
                   Sign Out
                 </button>
-              ) : (
-                <div className="sm:flex sm:flex-col sm:mt-5">
-                  <AuthModal isSignin={true} />
-                  <hr className="sm:hidden h-1 text-gray-100" />
-                  <AuthModal isSignin={false} />
-                </div>
-              )}
-            </div>
+                <button
+                  onClick={signout}
+                  className={`${!showMenu && "hidden"}  
+                  lg:hidden border-none bg-transparent lg:bg-blue-400 lg:text-white lg:border p-2 px-5 rounded mr-3 mt-2 sm:mt-0`}
+                >
+                  Sign Out
+                </button>
+              </>
+            ) : (
+              <div
+                className={`${
+                  !showMenu && "hidden"
+                } flex flex-col mt-5 lg:block lg:mt-0 lg:flex-row`}
+              >
+                <AuthModal isSignin={true} />
+                <hr className="sm:hidden h-1 text-gray-100" />
+                <AuthModal isSignin={false} />
+              </div>
+            )}
           </div>
-        )}
+        </div>
       </div>
     </nav>
   );
