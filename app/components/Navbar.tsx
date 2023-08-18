@@ -75,7 +75,7 @@ const Navbar = () => {
         <div
           className={`${
             showMenu &&
-            "absolute top-0 right-0 mt-10 bg-white p-3 rounded shadow-lg sm:h-[130px]"
+            "absolute top-0 right-0 mt-10 bg-white p-3 rounded shadow-lg sm:h-[90px]"
           }`}
         >
           <div className="flex flex-col lg:flex-row">
@@ -90,7 +90,7 @@ const Navbar = () => {
                 <button
                   onClick={signout}
                   className={`${!showMenu && "hidden"}  
-                  lg:hidden border-none bg-transparent lg:bg-blue-400 lg:text-white lg:border p-2 px-5 rounded mr-3 mt-2 sm:mt-0`}
+                  lg:hidden border-none bg-transparent lg:bg-blue-400 lg:text-white lg:border p-2 px-5 rounded mr-3 mt-2 lg:mt-0 sm:mt-4`}
                 >
                   Sign Out
                 </button>

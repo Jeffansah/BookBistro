@@ -8,16 +8,16 @@ const SearchBar = () => {
   const [location, setLocation] = useState("");
 
   return (
-    <div className="text-left text-lg py-3 m-auto flex justify-center">
+    <div className="text-left text-reg lg:text-lg py-3 m-auto flex justify-center">
       <input
-        className="rounded  mr-3 p-2 w-[450px]"
+        className="rounded  mr-3 p-2 w-[200px] lg:w-[450px]"
         type="text"
         placeholder="Search between Niagara, Ottawa, Toronto"
         value={location}
         onChange={(e) => setLocation(e.target.value)}
       />
       <button
-        className="rounded bg-red-600 px-9 py-2 text-white"
+        className="rounded bg-red-600 px-4 lg:px-9 py-2 text-white"
         onClick={() => {
           if (location === "") {
             return;
