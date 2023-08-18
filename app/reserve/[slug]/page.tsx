@@ -33,19 +33,21 @@ const ReservationPage = async ({
 
   return (
     <>
-      <div className="border-t h-screen">
-        <div className="py-9 w-3/5 m-auto">
-          <Header
-            image={restaurant.main_Image}
-            name={restaurant.name}
-            date={searchParams.date}
-            partySize={searchParams.partySize}
-          />
-          <ReservationForm
-            slug={params.slug}
-            date={searchParams.date}
-            partySize={searchParams.partySize}
-          />
+      <div className="border-t h-screen flex justify-center items-center">
+        <div className="flex flex-col justify-center items-center py-9 w-3/5 m-auto">
+          <div>
+            <Header
+              image={restaurant.main_Image}
+              name={restaurant.name}
+              date={searchParams.date}
+              partySize={searchParams.partySize}
+            />
+            <ReservationForm
+              slug={params.slug}
+              date={searchParams.date}
+              partySize={searchParams.partySize}
+            />
+          </div>
         </div>
       </div>
     </>
