@@ -75,7 +75,7 @@ const Navbar = () => {
         <div
           className={`${
             showMenu &&
-            "absolute top-0 right-0 mt-10 bg-white p-3 rounded shadow-lg sm:h-[90px]"
+            "absolute top-0 right-0 mt-10 bg-white p-3 py-4 rounded shadow-lg sm:py-6"
           }`}
         >
           <div className="flex flex-col lg:flex-row">
@@ -99,7 +99,7 @@ const Navbar = () => {
               <div
                 className={`${
                   !showMenu && "hidden"
-                } flex flex-col mt-5 lg:block lg:mt-0 lg:flex-row`}
+                } flex flex-col lg:block lg:mt-0 lg:flex-row`}
               >
                 <AuthModal isSignin={true} />
                 <hr className="sm:hidden h-1 text-gray-100" />

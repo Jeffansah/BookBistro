@@ -72,13 +72,13 @@ const Search = async ({ searchParams }: { searchParams: SearchParams }) => {
     <>
       <Header />
 
-      <div className="flex py-4 m-auto w-2/3 justify-between items-start">
+      <div className="flex py-4 lg:m-auto w-2/3 justify-between items-start">
         <Sidebar
           locations={locations}
           cuisines={cuisines}
           searchParams={searchParams}
         />
-        <div className="w-5/6">
+        <div className="lg:w-5/6 pr-4 lg:pr-0">
           {restaurants.length ? (
             restaurants.map((restaurant) => (
               <SearchRestaurantCard
