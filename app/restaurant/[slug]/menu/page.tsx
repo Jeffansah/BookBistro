@@ -1,7 +1,7 @@
 import React from "react";
 import MenuNavbar from "./components/MenuNavbar";
 import RestaurantMenu from "./components/RestaurantMenu";
-import RestaurantLayout from "../RestaurantLayout";
+import RestaurantLayout from "../layout";
 import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
@@ -27,11 +27,10 @@ const MenuPage = async ({ params }: { params: { slug: string } }) => {
   const menu = await fetchItems(params.slug);
 
   return (
-    <RestaurantLayout name={params.slug}>
-      <div className="bg-white w-[100%] rounded p-3 shadow">
-        <RestaurantMenu menu={menu} />
-      </div>
-    </RestaurantLayout>
+    <div className="bg-white w-[100%] rounded p-3 shadow">
+      <MenuNavbar slug={params.slug} />
+      <RestaurantMenu menu={menu} />
+    </div>
   );
 };
 

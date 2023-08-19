@@ -6,7 +6,7 @@ import Description from "./components/Description";
 import Images from "./components/Images";
 import Reviews from "./components/Reviews";
 import ReservationCard from "./components/ReservationCard";
-import RestaurantLayout from "./RestaurantLayout";
+import RestaurantLayout from "./layout";
 import { PrismaClient, Review } from "@prisma/client";
 import { notFound } from "next/navigation";
 
@@ -51,7 +51,7 @@ const RestaurantDetails = async ({ params }: { params: { slug: string } }) => {
   const restaurant = await fetchRestaurantBySlug(params.slug);
 
   return (
-    <RestaurantLayout name={params.slug}>
+    <>
       <div className="ml-[55px] lg:ml-0 bg-white w-[150%] lg:w-[70%] rounded p-3 shadow">
         <RestaurantNavbar
           slug={restaurant.slug}
@@ -71,7 +71,7 @@ const RestaurantDetails = async ({ params }: { params: { slug: string } }) => {
           slug={restaurant.slug}
         />
       </div>
-    </RestaurantLayout>
+    </>
   );
 };
 
