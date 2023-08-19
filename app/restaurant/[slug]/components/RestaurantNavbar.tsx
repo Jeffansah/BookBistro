@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import ReservationModal from "./reservationModal";
+import ReservationModal from "./ReservationModal";
 
 const RestaurantNavbar = ({
   slug,
