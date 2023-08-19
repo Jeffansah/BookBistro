@@ -29,7 +29,6 @@ const MenuPage = async ({ params }: { params: { slug: string } }) => {
   return (
     <RestaurantLayout name={params.slug}>
       <div className="bg-white w-[100%] rounded p-3 shadow">
-        <MenuNavbar slug={params.slug} />
         <RestaurantMenu menu={menu} />
       </div>
     </RestaurantLayout>
