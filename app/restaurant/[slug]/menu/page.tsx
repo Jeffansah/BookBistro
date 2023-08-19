@@ -1,8 +1,5 @@
 import React from "react";
-import Link from "next/link";
-import Navbar from "../../../components/Navbar";
-import Header from "../components/Header";
-import RestaurantNavbar from "../components/RestaurantNavbar";
+import MenuNavbar from "./components/MenuNavbar";
 import RestaurantMenu from "./components/RestaurantMenu";
 import RestaurantLayout from "../RestaurantLayout";
 import { PrismaClient } from "@prisma/client";
@@ -32,7 +29,7 @@ const MenuPage = async ({ params }: { params: { slug: string } }) => {
   return (
     <RestaurantLayout name={params.slug}>
       <div className="bg-white w-[100%] rounded p-3 shadow">
-        <RestaurantNavbar slug={params.slug} />
+        <MenuNavbar slug={params.slug} />
         <RestaurantMenu menu={menu} />
       </div>
     </RestaurantLayout>

@@ -52,7 +52,7 @@ const RestaurantDetails = async ({ params }: { params: { slug: string } }) => {
 
   return (
     <RestaurantLayout name={params.slug}>
-      <div className="ml-[70px] lg:ml-0 bg-white w-[150%] lg:w-[70%] rounded p-3 shadow">
+      <div className="ml-[55px] lg:ml-0 bg-white w-[150%] lg:w-[70%] rounded p-3 shadow">
         <RestaurantNavbar
           slug={restaurant.slug}
           openTime={restaurant.open_time}

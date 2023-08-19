@@ -62,7 +62,7 @@ export default async function Home() {
           Explore Restaurants
         </h2>
       </div>
-      <div className="max-w-[1500px] grid grid-cols-2 gap-1 sm:gap-0 sm:m-auto sm:flex flex-wrap sm:justify-center pr-3 sm:pr-0">
+      <div className="sm:max-w-[600px] lg:max-w-[1500px] grid grid-cols-2 gap-1 sm:ml-14 sm:gap-0  lg:m-auto sm:flex flex-wrap sm:justify-center pr-3 sm:pr-0">
         {restaurants.map((restaurant) => (
           <RestaurantCard restaurant={restaurant} />
         ))}
