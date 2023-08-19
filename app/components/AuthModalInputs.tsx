@@ -13,7 +13,7 @@ interface Props {
 
 const AuthModalInputs = ({ inputs, handleChangeInput, isSignIn }: Props) => {
   return (
-    <div>
+    <div className="max-w-[300px] sm:max-w-[1700px] ml-[60px] sm:ml-0 gap-3">
       {isSignIn ? null : (
         <div className="my-3 flex justify-between text-sm">
           <input
@@ -34,7 +34,7 @@ const AuthModalInputs = ({ inputs, handleChangeInput, isSignIn }: Props) => {
           />
         </div>
       )}
-      <div className="my-3 flex justify-between text-sm">
+      <div className="my-3 flex justify-between text-sm ">
         <input
           type="email"
           className="border rounded p-2 py-3 w-full focus:outline-blue-300"
