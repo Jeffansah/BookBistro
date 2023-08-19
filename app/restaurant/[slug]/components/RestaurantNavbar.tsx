@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import ReservationModal from "./ReservationModal";
+import ReserveModal from "./ReserveModal";
 
 const RestaurantNavbar = ({
   slug,
@@ -19,7 +19,7 @@ const RestaurantNavbar = ({
       {/* <Link href={`/restaurant/${slug}/menu`} className="mr-7">
         Menu
       </Link> */}
-      <ReservationModal openTime={openTime} closeTime={closeTime} slug={slug} />
+      <ReserveModal openTime={openTime} closeTime={closeTime} slug={slug} />
     </nav>
   );
 };

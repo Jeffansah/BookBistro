@@ -28,7 +28,7 @@ const style = {
   p: 4,
 };
 
-const ReservationModal = ({
+const ReserveModal = ({
   openTime,
   closeTime,
   slug,
@@ -182,4 +182,4 @@ const ReservationModal = ({
   );
 };
 
-export default ReservationModal;
+export default ReserveModal;
